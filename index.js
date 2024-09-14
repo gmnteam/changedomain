@@ -2,11 +2,10 @@ const express = require('express');
 const app = express();
 
 app.post('/', (req, res) => {
-    const currentDomain = req.get('host'); // Mengambil domain saat ini dari header
-    const newDomain = 'luminai.my.id'; // Domain baru
-
+    const currentDomain = req.get('host');
+    const newDomain = 'luminai.my.id';
     const result = {
-        message: `Domain yang Anda gunakan saat ini adalah ${currentDomain}. Kami telah memindahkan layanan ke domain baru: ${newDomain}. Untuk terus terhubung dengan LuminAi, harap perbarui URL Anda ke ${newDomain}. Jika ada pertanyaan atau butuh bantuan, silakan chat wa.me/6285658939117 atau t.me/putu_id.`
+        result: `👋 Hai! Sepertinya Anda masih menggunakan domain ${currentDomain}.\n\nKami baru saja memindahkan layanan kami ke domain baru: ${newDomain}. Untuk terus mendapatkan pembaruan dan terhubung dengan LuminAi, pastikan Anda memperbarui URL Anda ke ${newDomain}.\n\n📢 Jangan lewatkan informasi terbaru! Ikuti saluran WhatsApp kami di [sini](https://whatsapp.com/channel/0029VaeVmX74yltNR7UJLk2t).\n\nJika ada pertanyaan atau butuh bantuan, kami siap membantu di wa.me/6285658939117 atau t.me/putu_id.\n\nTerima kasih dan semoga hari Anda menyenangkan! 😊`
     };
     
     res.json(result);
